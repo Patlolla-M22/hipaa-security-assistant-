@@ -3,12 +3,12 @@ import uuid
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from answer import retrieve, client, MODEL, SYSTEM
+from graph import run
 
 app = FastAPI(title="HIPAA & Security Policy Assistant")
 
-sessions = {}      # session_id -> list of past messages
-MAX_TURNS = 6      # how many past exchanges to remember
+sessions = {}
+MAX_TURNS = 6
 
 
 class ChatRequest(BaseModel):
@@ -27,25 +27,16 @@ def chat(req: ChatRequest):
     sid = req.session_id or str(uuid.uuid4())
     history = sessions.setdefault(sid, [])
 
-    hits = retrieve(req.question)
-    context = "\n\n".join(
-        f"[{i + 1}] ({h['source']} p.{h['page']})\n{h['text']}" for i, h in enumerate(hits)
-    )
-    messages = history[-MAX_TURNS * 2:] + [
-        {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {req.question}"}
-    ]
-    msg = client.messages.create(
-        model=MODEL, max_tokens=600, system=SYSTEM, messages=messages
-    )
-    text = msg.content[0].text
+    out = run(req.question, history[-MAX_TURNS * 2:])
 
     history.append({"role": "user", "content": req.question})
-    history.append({"role": "assistant", "content": text})
+    history.append({"role": "assistant", "content": out["answer"]})
 
     return {
         "session_id": sid,
-        "answer": text,
-        "sources": [{"source": h["source"], "page": h["page"]} for h in hits],
+        "answer": out["answer"],
+        "sources": [{"source": h["source"], "page": h["page"]} for h in out["hits"]],
+        "trace": out["trace"],
         "latency_seconds": round(time.time() - start, 2),
-        "tokens": {"input": msg.usage.input_tokens, "output": msg.usage.output_tokens},
+        "tokens": {"input": out["tokens_in"], "output": out["tokens_out"]},
     }
