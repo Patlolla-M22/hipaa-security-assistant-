@@ -1,0 +1,167 @@
+[
+  {
+    "question": "What are the phases of the incident response life cycle?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 3.29,
+    "tokens_in": 1281,
+    "tokens_out": 191,
+    "cost": 0.002236,
+    "weak_grades": 0,
+    "answer": "According to the context provided, the incident response process has several phases [3]:\n\n1. **Preparation** - Establishing and training an incident response team, acquiring necessary tools and resources, and implementing controls to limit the number of incidents\n\n2. **Detection and Analysis** - Detecting security breaches to alert the organization when incidents occur\n\n3. **Containment** - Mitigating the impact of the incident by containing it\n\n4. **Eradication and Recovery** - Ultimately recovering from the incident\n\n5. **Post-Incident Activity** - Issuing a report that details the cause and cost of the incident and steps to prevent future incidents [3]\n\nThe context also notes that activity often cycles back to detection and analysis during later phases, such as when checking if additional hosts are infected by malware while eradicating a malware incident [3]."
+  },
+  {
+    "question": "What should an incident response policy include?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 2.53,
+    "tokens_in": 1520,
+    "tokens_out": 176,
+    "cost": 0.0024,
+    "weak_grades": 0,
+    "answer": "According to the context provided, an incident response policy should include the following key elements [3]:\n\n- Statement of management commitment\n- Purpose and objectives of the policy\n\nThe context also indicates that incident response policies are highly individualized to each organization, so while most policies include these same key elements, the specific content may vary [3].\n\nAdditionally, the broader incident response program should address related areas such as [1]:\n- Creating procedures for performing incident handling and reporting\n- Setting guidelines for communicating with outside parties regarding incidents\n- Selecting a team structure and staffing model\n- Establishing relationships and lines of communication between the incident response team and other groups, both internal (e.g., legal department) and external (e.g., law enforcement agencies)\n- Determining what services the incident response team should provide"
+  },
+  {
+    "question": "What are the recoverability effort categories?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 2.15,
+    "tokens_in": 1735,
+    "tokens_out": 138,
+    "cost": 0.002425,
+    "weak_grades": 0,
+    "answer": "According to the NIST guidance, there are four recoverability effort categories [1][2]:\n\n1. **Regular** - Time to recovery is predictable with existing resources\n\n2. **Supplemented** - Time to recovery is predictable with additional resources\n\n3. **Extended** - Time to recovery is unpredictable; additional resources and outside help are needed\n\n4. **Not Recoverable** - Recovery from the incident is not possible (e.g., sensitive data exfiltrated and posted publicly); launch investigation\n\nThese categories reflect the level and type of resources required to recover from an incident [2]."
+  },
+  {
+    "question": "What is a containment strategy and why is it important?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 3.07,
+    "tokens_in": 1554,
+    "tokens_out": 265,
+    "cost": 0.0028789999999999996,
+    "weak_grades": 0,
+    "answer": "# Containment Strategy\n\n## Definition\nA containment strategy refers to predetermined plans and procedures for containing a security incident by making essential decisions such as shutting down a system, disconnecting it from a network, or disabling certain functions [1].\n\n## Why It Is Important\n\nContainment is important for several reasons:\n\n1. **Prevents Resource Overwhelm and Damage**: Containment is important before an incident overwhelms resources or increases damage [1].\n\n2. **Provides Time for Remediation**: Containment provides time for developing a tailored remediation strategy [1].\n\n3. **Prevents Escalation**: Delaying containment is dangerous because an attacker could escalate unauthorized access or compromise other systems [4].\n\n4. **Prevents Secondary Attacks**: If an organization knows a system has been compromised and allows the compromise to continue, it may be liable if the attacker uses the compromised system to attack other systems [4].\n\n## Key Consideration\n\nBecause most incidents require containment, making decisions about containment is an important early consideration in handling each incident. Organizations should define acceptable risks and develop containment strategies accordingly, with criteria documented clearly to facilitate decision-making [1]."
+  },
+  {
+    "question": "What is the purpose of a lessons learned meeting after an incident?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 3.62,
+    "tokens_in": 1477,
+    "tokens_out": 296,
+    "cost": 0.0029570000000000004,
+    "weak_grades": 0,
+    "answer": "# Purpose of Lessons Learned Meetings After an Incident\n\nBased on the provided documents, lessons learned meetings serve several important purposes:\n\n**Primary Objectives:**\n- To review what occurred, what was done to intervene, and how well the intervention worked [3]\n- To achieve closure with respect to an incident [3]\n- To review the effectiveness of the incident handling process and identify necessary improvements to existing security controls and practices [1]\n\n**Specific Benefits Include:**\n\n1. **Process Improvement**: The meeting provides impetus for updating incident response policies and procedures by revealing missing steps or inaccuracies [2]\n\n2. **Training and Knowledge Transfer**: Reports from lessons learned meetings serve as good training material for new team members by showing them how experienced team members respond to incidents [2]\n\n3. **Systemic Improvement**: The information accumulated from all lessons learned meetings should be used to identify and correct systemic weaknesses and deficiencies in policies and procedures [1]\n\n4. **Future Incident Handling**: The meeting helps determine what the staff and management would do differently the next time a similar incident occurs and what precursors should be watched for in the future [4]\n\n**Timing**: These meetings should be held within several days of the end of a major incident, and optionally periodically after lesser incidents as resources permit [3]"
+  },
+  {
+    "question": "What is the difference between a precursor and an indicator?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 2.74,
+    "tokens_in": 1539,
+    "tokens_out": 191,
+    "cost": 0.002494,
+    "weak_grades": 0,
+    "answer": "Based on the provided context:\n\nA **precursor** is a sign that an incident **may occur in the future** [2]. It indicates that an attacker may be preparing to cause an incident [3]. Examples include web server log entries showing vulnerability scanner usage, announcements of new exploits, or threats from groups stating they will attack the organization [2].\n\nAn **indicator** is a sign that an incident **may have occurred or may be occurring now** [2]. Indicators are much more common than precursors. Examples include network intrusion detection sensor alerts for buffer overflow attempts, antivirus alerts detecting malware, multiple failed login attempts from unfamiliar systems, and unusual deviations from typical network traffic flows [1][4].\n\nIn summary: precursors suggest a future attack may happen, while indicators suggest an attack is happening or has already happened [2]."
+  },
+  {
+    "question": "How soon must a business associate notify the covered entity of a breach?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 1.53,
+    "tokens_in": 1532,
+    "tokens_out": 54,
+    "cost": 0.001802,
+    "weak_grades": 0,
+    "answer": "According to the HIPAA Breach Notification Rule, a business associate must notify the covered entity of a breach \"without unreasonable delay and no later than 60 days from the discovery of the breach.\" [1]"
+  },
+  {
+    "question": "What factors are used in a breach risk assessment?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 2.63,
+    "tokens_in": 1811,
+    "tokens_out": 144,
+    "cost": 0.002531,
+    "weak_grades": 0,
+    "answer": "According to the HIPAA Breach Notification Rule, the factors used in a breach risk assessment are [1]:\n\n1. **The nature and extent of the protected health information involved**, including the types of identifiers and the likelihood of re-identification;\n\n2. **The unauthorized person who used the protected health information or to whom the disclosure was made**;\n\n3. **Whether the protected health information was actually acquired or viewed**; and\n\n4. **The extent to which the risk to the protected health information has been mitigated**.\n\nThese four factors help covered entities and business associates determine the probability that protected health information has been compromised [1]."
+  },
+  {
+    "question": "Who must be notified after a breach of unsecured protected health information?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 2.8,
+    "tokens_in": 1570,
+    "tokens_out": 197,
+    "cost": 0.002555,
+    "weak_grades": 0,
+    "answer": "According to the Breach Notification Rule, the following parties must be notified after a breach of unsecured protected health information [4]:\n\n1. **Affected individuals** - Covered entities must notify affected individuals following the discovery of a breach. This notice must be provided in written form by first-class mail, or alternatively by e-mail if the affected individual has agreed to receive notices electronically [3][4].\n\n2. **The Secretary** - Covered entities must provide notification to the Secretary [4].\n\n3. **The media** - Covered entities must notify the media in certain circumstances [4].\n\n4. **The covered entity** - Business associates must notify the covered entity if a breach occurs at or by the business associate [3]. Additionally, business associates should provide the covered entity with identification of each affected individual and other available information required for the covered entity's notification to affected individuals [2]."
+  },
+  {
+    "question": "What are the categories of HIPAA Security Rule safeguards?",
+    "should_answer": true,
+    "pass": true,
+    "latency": 2.5,
+    "tokens_in": 2011,
+    "tokens_out": 159,
+    "cost": 0.002806,
+    "weak_grades": 0,
+    "answer": "According to the provided context, the HIPAA Security Rule includes three categories of safeguards [1]:\n\n1. **Administrative Safeguards** \u2013 Provides information and considerations for regulated entities for the standards and implementation specifications of the Administrative safeguards in the Security Rule.\n\n2. **Physical Safeguards** \u2013 Provides information and considerations for regulated entities for the standards and implementation specifications of the Physical safeguards in the Security Rule.\n\n3. **Technical Safeguards** \u2013 Provides information and considerations for regulated entities for the standards and implementation specifications of the Technical safeguards in the Security Rule.\n\nAdditionally, there are **Organizational, Policies and Procedures and Documentation Requirements** standards [1]."
+  },
+  {
+    "question": "What is the capital of France?",
+    "should_answer": false,
+    "pass": true,
+    "latency": 3.06,
+    "tokens_in": 1570,
+    "tokens_out": 70,
+    "cost": 0.00192,
+    "weak_grades": 2,
+    "answer": "I don't have that in the documents. The provided passages contain information about HIPAA, cybersecurity resources, and incident response handling, but they do not address geography or capital cities. I can only answer questions based on the context passages provided to me."
+  },
+  {
+    "question": "What are the penalty amounts for GDPR violations?",
+    "should_answer": false,
+    "pass": true,
+    "latency": 3.35,
+    "tokens_in": 2259,
+    "tokens_out": 80,
+    "cost": 0.002659,
+    "weak_grades": 2,
+    "answer": "I don't have that in the documents. The provided context passages are from NIST security incident handling guidelines and do not contain information about GDPR violation penalties. To answer your question about GDPR penalties, you would need to consult GDPR regulatory documentation or guidance materials."
+  },
+  {
+    "question": "How do I configure a Cisco firewall?",
+    "should_answer": false,
+    "pass": true,
+    "latency": 2.97,
+    "tokens_in": 2310,
+    "tokens_out": 70,
+    "cost": 0.00266,
+    "weak_grades": 2,
+    "answer": "I don't have that in the documents. The provided context passages discuss general network security principles and incident handling guidelines from NIST, but they do not contain specific instructions for configuring Cisco firewalls or any other particular vendor's equipment."
+  },
+  {
+    "question": "Who won the 2022 World Cup?",
+    "should_answer": false,
+    "pass": true,
+    "latency": 3.22,
+    "tokens_in": 2281,
+    "tokens_out": 109,
+    "cost": 0.002826,
+    "weak_grades": 2,
+    "answer": "I don't have that in the documents. The provided context passages are from NIST Special Publication 800-61r2, which covers incident handling guidance. They contain no information about the 2022 World Cup or any sports-related topics.\n\nIf you have questions about HIPAA, security incident handling, or incident response procedures based on the NIST documentation provided, I'd be happy to help with those."
+  },
+  {
+    "question": "What does PCI DSS require for storing card data?",
+    "should_answer": false,
+    "pass": true,
+    "latency": 2.93,
+    "tokens_in": 2449,
+    "tokens_out": 95,
+    "cost": 0.002924,
+    "weak_grades": 2,
+    "answer": "I don't have that in the documents. The provided context passages are from NIST SP 800-61r2 (Computer Security Incident Handling Guide) and discuss incident response procedures, evidence handling, and forensic techniques. They do not contain information about PCI DSS (Payment Card Industry Data Security Standard) requirements for storing card data."
+  }
+]
